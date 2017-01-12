@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "AViewController.h"
+#import <A_Category/CTMediator+A.h>
 
 @interface ViewController ()
 
@@ -34,10 +34,11 @@
 #pragma mark - event response
 - (void)didTappedPushAViewControllerButton:(UIButton *)button
 {
-    AViewController *viewController = [[AViewController alloc] init];
+    UIViewController *viewController = [[CTMediator sharedInstance] A_aViewController];
     [self presentViewController:viewController animated:YES completion:^{
         
     }];
+    
 }
 
 #pragma mark - getters and setters

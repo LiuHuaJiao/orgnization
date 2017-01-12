@@ -7,7 +7,7 @@
 //
 
 #import "AViewController.h"
-#import "BViewController.h"
+#import <B_Category/CTMediator+B.h>
 
 @interface AViewController ()
 
@@ -37,9 +37,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)didTappedPushBViewControllerButton:(UIButton *)button
-{
-    BViewController *viewController = [[BViewController alloc] initWithContentText:@"hello, world!"];
+- (void)didTappedPushBViewControllerButton:(UIButton *)button {
+    UIViewController *viewController = [[CTMediator sharedInstance] B_viewControllerWithContentText:@"hello, world!"];
     [self presentViewController:viewController animated:YES completion:^{
         
     }];
